@@ -322,13 +322,13 @@ export function Sidebar(props) {
                             <FaMicrochip id="hardware-nav-icon" />
                         </Link>
                         {hardwareExpanded && (
-                            <Link to="/hardware/laptop">
-                                <IoIosLaptop id="laptop-nav-icon" className="fade" />
+                            <Link to="/hardware/desktop">
+                                <PiDesktopTowerDuotone id="desktop-nav-icon" className="fade" />
                             </Link>
                         )}
                         {hardwareExpanded && (
-                            <Link to="/hardware/desktop">
-                                <PiDesktopTowerDuotone id="desktop-nav-icon" className="fade" />
+                            <Link to="/hardware/laptop">
+                                <IoIosLaptop id="laptop-nav-icon" className="fade" />
                             </Link>
                         )}
                         <hr style={{margin: '2.5px 7px'}} />
@@ -407,14 +407,14 @@ const SidebarMobileData = [
         iconOpened: <RiArrowUpSFill />,
         subNav: [
             {
-                title: 'Laptop',
-                path: '/hardware/laptop',
-                icon: <IoIosLaptop />
-            },
-            {
                 title: 'Desktop',
                 path: '/hardware/desktop',
                 icon: <PiDesktopTowerDuotone />
+            },
+            {
+                title: 'Laptop',
+                path: '/hardware/laptop',
+                icon: <IoIosLaptop />
             },
         ]
     },

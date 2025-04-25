@@ -105,7 +105,7 @@ export function EducationDetails(props) {
                 <div id="education-details-wrapper-div" className="education-details-wrapper-div">
                     <div id="education-details-content" className="education-details-content">
                         <h2 className="info-title">Education General Info</h2>
-                        <div className="content-split full">
+                        <div id="general-info" className="general-info-split">
                             <div className="left">
                                 <p>Degree Type:</p>
                                 <p>Major:</p>

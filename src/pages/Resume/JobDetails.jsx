@@ -106,7 +106,7 @@ export function JobDetails(props) {
                     <div id="job-details-content" className="job-details-content">
                         <div className="data-div row">
                             <div>
-                                <div>
+                                <div id="job-description">
                                     <h2 className='desc'>Job Description</h2>
                                     {data.description && <p>{data.description}</p>}
                                     {!data.description && <p>No description found.</p>}
@@ -146,7 +146,7 @@ export function JobDetails(props) {
                                         {data.experiences && <Markdown>{data.experiences}</Markdown>}
                                         {!data.experiences && <p>No experiences found.</p>}
                                     </div>
-                                    <div>
+                                    <div id="experience-info-images">
                                         {images.length >= 4 && <img src={images[3]} alt="experiences-pic" />}
                                         {images.length >= 5 && <img src={images[4]} alt="experiences-pic-2" />}
                                     </div>
