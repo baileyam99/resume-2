@@ -165,8 +165,7 @@
         padding: 2em;
         border: 2px solid colors.$main-border;
         border-radius: 10px;
-    }
-    
+    } 
 }
 
 @media only all and (min-device-width: 641px) and (max-device-width: 1024px) {
@@ -180,9 +179,79 @@
 }
 
 @media only all and (max-width: 640px) {
+    #job-details-section {
+        margin: 5px auto;
+        width: 95%;
+        float: none;
+    }
+
+    .job-details-wrapper-div {
+        padding: 1em;
+        margin-left: 1em;
+    }
+
     .job-details-title {
+        margin-left: 1em;
         h1 {
+            font-size: 30px;
+        }
+
+        h3 {
+            margin-top: 0;
             font-size: 20px;
+        }
+
+        img {
+            margin: 0;
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    #job-description {
+        p {
+            text-align: left !important;
+        }
+    }
+
+    .data-div {
+        width: 100% !important;
+        margin: 1em 0 !important;
+        margin-bottom: 2em;
+        img {
+            width: 300px !important;
+            margin: 0 !important;
+        }
+
+        &.row {
+            div {
+                flex-direction: column !important;
+            }
+        }
+    }
+
+    .list-wrapper {
+        margin: 0 1em !important;
+
+        img {
+            width: 225px !important;
+            margin: 0 auto;
+        }
+    }
+
+    #experiences {
+        margin: 0 !important;
+        padding: 0 !important; 
+        flex-direction: column;
+        #experience-info {
+            margin: 1em !important;
+        } 
+    }
+
+    #experience-info-images {
+        img {
+            width: 300px !important;
+            margin: 1em 0 !important;
         }
     }
 }
