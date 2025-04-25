@@ -1,0 +1,243 @@
+@use './styles/colors.scss';
+@use './styles/fonts.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: fonts.$main-font;
+  word-wrap: break-word;
+}
+
+html, body, main {
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background-image: url('./assets/beach-sunset.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: colors.$main-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: fonts.$title-font;
+  font-weight: 100;
+}
+
+.main-button {
+  background-color: colors.$button-main;
+  color: colors.$main-font;
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease, font-weight 0.1s ease;
+
+  &:hover {
+    background-color: colors.$button-hover;
+    color: colors.$hover-font;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  &:disabled,
+  [disabled] {
+    border: 1px solid colors.$disabled-border;
+    background-color: colors.$button-disabled;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+
+  &:active {
+    color: colors.$active-font;
+    background-color: colors.$button-active;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+  }
+}
+
+.outline-button {
+  cursor: pointer;
+  background-color: transparent;
+  color: colors.$main-font;
+  width: auto;
+  height: 35px;
+  padding: 7px 1em;
+  margin: 0 10px;
+  border: 2px solid colors.$bg1;
+  border-radius: 7px;
+}
+
+.outline-button:hover {
+  background-color: colors.$button-main;
+  font-weight: bold;
+}
+
+.outline-button:active {
+  background-color: colors.$button-active;
+  transform: scale(0.95);
+}
+
+img {
+  margin: 5px;
+}
+
+a {
+  color: colors.$main-font;
+}
+
+.logo-font {
+  font-weight: bold;
+}
+
+input {
+  color: #000;
+}
+
+.translator {
+  transform: translateY(2px);
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  border: 1.5px solid colors.$bg4;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid colors.$bg4;
+  padding: .2em .5em .2em .5em;
+  text-align: center;
+  white-space: wrap;
+  line-height: 1.5em;
+}
+
+tr {
+  background-color: #727272;
+}
+
+tr:nth-child(even) {
+  background-color: #5A5959;
+}
+
+th {
+  background-color: colors.$bg1;
+  font-weight: normal;
+  color: colors.$main-font;
+}
+
+tr:hover {
+  background-color: #b4b4b4;
+}
+
+ul {
+  margin: 5px;
+  padding: 0;
+
+  ul {
+    margin-left: 2em;
+  }
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+details > *:not(summary){
+  margin-left: 2em;
+}
+
+details {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 0.8;
+  padding-bottom: 0;
+  text-align: left;
+
+  &[open] {
+    max-height: 1000px;
+    opacity: 1;
+    padding-bottom: 1em;
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::marker {
+    transition: transform 0.3s ease;
+  }
+
+  &[open] summary::marker {
+    transform: rotate(90deg);
+  }
+}
+
+summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}  
+
+@media only all and (min-device-width: 641px) and (max-device-width: 1024px) and (orientation: portrait) {
+  th, td {
+    white-space: normal;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  main {
+    display: block;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  html, body, main {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+  }
+
+  .main-button {
+    padding: 5px 10px;
+    margin: 10px 12px;
+    font-family: 'Avenir Heavy' !important;
+  }
+
+  th, td {
+    white-space: normal;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}

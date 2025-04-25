@@ -1,0 +1,79 @@
+@use '../../styles/colors.scss';
+@use '../../styles/animations.scss';
+
+#no-creation-section {
+    transition: all 0.3s ease-in-out;
+    animation: animations.$fade-in;
+}
+
+.no-creation-wrapper-div {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(132, 116, 116, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3 ease;
+    margin: 1em;
+    margin-left: 10px;
+    width: auto;
+    height: calc(100vh - 2.5em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.no-creation-content {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+
+    div {
+        margin: 1em;
+    }
+
+    img {
+        margin-top: 5em;
+        width: 350px;
+        border-radius: 25px;
+    }
+
+    h1 {
+        width: 100%;
+        margin: auto;
+    }
+
+    h4 {
+        margin: 1em 1em 0;
+    }
+
+    a {
+        text-decoration: underline;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    p {
+        margin: 1em;
+    }
+
+    #check-back {
+        padding-bottom: 3em;
+    }
+}
+
+@media only all and (max-width: 640px) {
+    .no-creation-wrapper-div {
+        height: calc(100vh - 115px);
+        margin-left: 1em;
+    }
+    .no-creation-content {
+        img {
+            width: 300px;
+        }
+    }
+}

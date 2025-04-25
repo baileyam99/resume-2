@@ -1,0 +1,216 @@
+@use '../../styles/colors.scss';
+@use '../../styles/animations.scss';
+
+#dashboard-section {
+    float: right;
+    transition: all 0.3s ease-in-out;
+    animation: animations.$fade-in;
+}
+
+#dashboard-header-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 1em 1em 0 10px;
+    height: auto;
+}
+
+.profile-wrapper,
+.dashboard-title,
+.dashboard-actions,
+.dashboard-wrapper-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+    background: colors.$bg1;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: all 0.3 ease;
+}
+
+.profile-wrapper {
+    width: fit-content;
+    height: auto;
+    margin-right: .5em;
+    background: colors.$bg1;
+
+    div {
+        text-align: left;
+    }
+
+    img {
+        width: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1em;
+    }
+
+    h1 {
+        white-space: nowrap;
+        span {
+            font-family: 'Avenir Heavy';
+            font-weight: bold;
+        }
+
+        a {
+            font-family: 'Avenir Heavy';
+            font-weight: 100;
+
+            &:hover {
+                color: colors.$hover-font;
+                font-weight: bold;
+            }
+
+            &:active {
+                color: colors.$active-font;
+            }
+        }
+    }
+}
+
+.dashboard-title {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: auto;
+    // TODO: Remove below and uncomment last line in dashbaord story
+    margin: 0;
+    margin-right: 0.5em;
+    width: 100%;
+    // margin: 0 0.5em;
+}
+
+.dashboard-wrapper-div {
+    width: auto;
+    height: calc(100vh - 8.25em);
+    padding: 1em 3em;
+    margin: 1em 1em 1em 10px;
+    overflow: auto;
+    text-wrap: nowrap;
+}
+
+.dashboard-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title-button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    width: 100%;
+    text-wrap: nowrap;
+}
+
+.title-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.title-button:active {
+    background: rgba(255, 255, 255, 0.8);
+    h1 {
+        color: colors.$active-font;
+    }
+}
+
+.title-button h1 {
+    padding: 0 10px;
+}
+
+.dashboard-actions {
+    margin: 0 0.5em;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+        white-space: nowrap;
+    }
+
+    button {
+        white-space: nowrap;
+        margin: 0 5px;
+    }
+}
+
+@media only all and (min-device-width: 641px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .dashboard-title {
+        width: 50% !important;
+        margin-left: 0;
+    }
+    .dashboard-actions {
+        width: 50%;
+    }
+    .dashboard-wrapper-div {
+        height: calc(100vh - 12em);
+    }
+}
+
+@media only all and (min-device-width: 641px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .dashboard-company-title,
+    .dashboard-title,
+    .dashboard-actions,
+    .dashboard-wrapper-div {
+        padding: 10px;
+    }
+
+    .dashboard-title {
+        margin-left: -0.5em;
+    }
+
+    .dashboard-wrapper-div {
+        padding: 10px;
+        margin-right: 1.5em;
+        margin-bottom: 0;
+        height: calc(100vh - 7.5em);
+        max-height: 70em;
+    }
+}
+
+@media only all and (max-width: 640px) {
+    #dashboard-section {
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #dashboard-header-wrapper {
+        margin: 1em;
+        padding: 0;
+    }
+
+    .dashboard-title {
+        width: 100%;
+        margin: 0;
+    }
+
+    .dashboard-actions {
+        margin: 0 1em 10px 1em;
+        padding: 10px;
+
+        label {
+            display: none;
+        }
+
+        button {
+            white-space: nowrap;
+        }
+    }
+
+    .dashboard-wrapper-div {
+        margin: 1em;
+        margin-bottom: 0;
+        padding: 1em;
+        height: calc(100vh - 11.5em);
+    }
+}

@@ -1,0 +1,551 @@
+@use './colors.scss';
+@use './fonts.scss';
+
+.instruments-div {
+    width: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: flex-start; 
+    flex-wrap: wrap;
+}
+
+.padded {
+    padding: 0.5em 0;
+
+    &.reset {
+        padding: 1em;
+    }
+
+    &.side {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    &.center {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &.error {
+        border: 1px solid colors.$error-color;
+        border-radius: 4px;
+    }
+
+    &.indented {
+        width: 90%;
+        float: right;
+    }
+}
+
+.reset-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon-black {
+    fill: #00000099;
+}
+
+.helper {
+    margin-left: -1vw;
+    padding-bottom: 1em;
+}
+
+.helper-2 {
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.card-actions {
+    margin: 2em 1em;
+    justify-content: center;
+}
+
+.form-error {
+    color: colors.$error-color
+}
+
+.login-extra-actions {
+    margin: -35px 2% 0 2%;
+    display: flex;
+    justify-content: flex-start !important;
+    a {
+        color: colors.$secondary-font;
+        font-weight: bold;
+
+        &:hover {
+            color: colors.$secondary-hover-font;
+            text-decoration: underline;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+.instrument-button-div {
+    margin: 0;
+
+    &:last-child {
+        margin-bottom: 3em;
+    }
+}
+
+.main-button {
+    &.reset {
+        align-self: self-start;
+    }
+}
+
+.info-color {
+    color: colors.$info-font;
+
+    &.list {
+        ul {
+            margin: 1em 2em;
+
+            li {
+                margin: 7px 0;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.font-bg1 {
+    color: colors.$bg1;
+}
+
+#create-account-form {
+    height: 100%;
+}
+
+#create-box {
+    margin-bottom: 3em;
+}
+
+#year-label {
+    a {
+        color: colors.$secondary-font;
+        &:hover {
+            color: colors.$secondary-hover-font;
+        }
+    }
+}
+
+#experience-helper-text {
+    padding-left: 1px;
+}
+
+#message-helper-text {
+    padding-left: 1px;
+}
+
+.secondary {
+    color: colors.$secondary-font;
+    &:hover {
+        color: colors.$secondary-hover-font;
+    }
+}
+
+.uuid-reload {
+    width: 20px;
+    height: auto;
+    transform: translateY(-2px) !important;
+    &:hover {
+        cursor: pointer;
+        color: colors.$hover-font;
+    }
+}
+
+.alert-banner {
+    &.error {
+        h2 {
+            margin: 0 !important;
+            font-size: 20px;
+        }
+    }
+}
+
+.trashcan {
+    padding: 5px;
+    margin-right: -10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(1.5px);
+    svg {
+        width: 22px;
+        height: auto;
+        fill: colors.$secondary-font;
+    }
+
+    &:hover {
+        background: rgba(49, 49, 49, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        svg {
+            fill: colors.$secondary-hover-font;
+        }
+    }
+
+    &:active {
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    &.fit {
+        width: fit-content;
+        margin: 0 auto;
+
+        &.disabled {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.disabled-all .trashcan {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#upload-instructions {
+    margin: 5px 0 10px 0;
+}
+
+.time-div {
+    color: colors.$main-font;
+
+    .icon-loading {
+        margin-left: 2px;
+        transform: translateY(4px);
+        width: 20px;
+        height: auto;
+    }
+}
+
+.options {
+    padding: 5px 0;
+    p, ul, li {
+        margin: 0;
+        padding-bottom: 0;
+        color: colors.$secondary-font;
+        text-align: left;
+    }
+
+    p {
+        font-weight: bold;
+    }
+
+    li {
+        margin-left: 3em;
+        span {
+            font-weight: lighter;
+            color: colors.$black-transparent;
+        }
+    }
+}
+
+#create-album-label {
+    margin-top: 1em;
+}
+
+#album-label {
+    margin-top: 1em;
+}
+
+#manage-media-label {
+    margin: 10px auto;
+}
+
+.MuiTypography-root {
+    &.MuiTypography-root {
+        font-family: fonts.$main-font;
+    }
+}
+
+.MuiChip-root {
+    &.info {
+        color: colors.$info-font;
+        font-weight: bold;
+
+        &.white {
+            background-color: colors.$main-font;
+        }
+
+        &.glass {
+            background-color: colors.$glass;
+        }
+    }
+}
+
+.MuiCard-root {
+    &.form-card {
+        width: 400px;
+        background-color: colors.$form-color;
+        font-family: fonts.$main-font;
+    }
+}
+
+.MuiFormControl-root {
+    &.MuiFormControl-root {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        p {
+            margin: 0 !important;
+        }
+    }
+}
+
+.MuiFormHelperText-root {
+    &.MuiFormHelperText-root {
+        color: colors.$helper-text-font;
+        font-weight: bold;
+        padding: 0;
+        margin-bottom: 0.75em;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+.MuiAccordion-root {
+    &.MuiAccordion-root {
+        background-color: colors.$accordion-bg;
+        color: colors.$secondary-font;
+        margin: 1em 0;
+        font-weight: bolder;
+    }
+}
+
+.MuiAccordionDetails-root {
+    &.MuiAccordionDetails-root {
+        margin: -1.5em auto;
+        overflow-wrap: break-word; 
+        word-wrap: break-word;
+        hyphens: auto;
+        font-weight: normal;
+    }
+
+    .account-info {
+        margin: 1em;
+        text-align: left;
+
+        p {
+            margin: 10px 0;
+            span {
+                color: colors.$tertiary-font;
+            }
+        }
+    }
+}
+
+.MuiChip-root {
+    &.MuiChip-root {
+        height: auto;
+        min-height: 25px;
+        text-align: left;
+    }
+
+    &.MuiChip-label {
+        white-space: wrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    &.MuiChip-deletable {
+        &.MuiChip-colorSecondary {
+            border-color: colors.$main-font;
+            color: colors.$main-font;
+            svg {
+                fill: colors.$main-font;
+                &:hover {
+                    fill: colors.$hover-font;
+                }
+            }
+        }
+    }
+
+    &.instrument-chip {
+        color: colors.$main-font;
+    }
+}
+
+.MuiFormLabel-asterisk {
+    &.MuiFormLabel-asterisk {
+        color: colors.$error-color;
+    }
+}
+
+.hidden-asterisk {
+    .MuiFormLabel-asterisk {
+        &.MuiFormLabel-asterisk {
+            display: none;
+        }
+    }
+}
+
+.hidden-asterisk-control {
+    border: 1px solid colors.$secondary-border;
+    border-radius: 4px;
+    margin: 0 !important;
+
+    a {
+        text-decoration: underline;
+        &:hover {
+            text-decoration-color: colors.$hover-font;
+        }
+    }
+
+    &.error {
+        border: 1px solid colors.$error-color;
+    }
+
+    .MuiFormControlLabel-asterisk {
+        &.MuiFormControlLabel-asterisk {
+            display: none;
+        }
+    }
+}
+
+.MuiInputLabel-root {
+    &.MuiInputLabel-root {
+        font-family: fonts.$main-font;
+        font-weight: normal;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+
+        &.birthday {
+            color: colors.$secondary-font;
+        }
+
+        &.terms {
+            font-size: 80%;
+            transform: translateY(1.5px);
+            text-align: left;
+        }
+    }
+
+    &.instrument-label {
+        color: colors.$main-font;
+        &.second {
+            color: colors.$secondary-font;
+
+        }
+    }
+}
+
+.MuiOutlinedInput-root {
+    &.MuiOutlinedInput-root {
+        font-family: fonts.$main-font;
+    }
+}
+
+.MuiSelect-root {
+    &.MuiSelect-root {
+        font-family: fonts.$main-font;
+    }
+}
+
+.MuiMenuItem-root {
+    &.MuiMenuItem-root {
+        font-family: fonts.$main-font;
+    }
+}
+
+.MuiCardHeader-title {
+    &.MuiCardHeader-title {
+        font-family: fonts.$title-font;
+        color: colors.$secondary-font;
+        svg {
+            fill: colors.$secondary-font;
+        }
+    }
+}
+
+.MuiSelect-select {
+    &.MuiSelect-select {
+        text-align: left;
+    }
+}
+
+.MuiCardActions-root {
+    &.MuiCardActions-root {
+        justify-content: center;
+    }
+}
+
+.MuiInputAdornment-root {
+    &.MuiInputAdornment-root {
+        transform: translateY(-2px);
+        svg {
+            fill: colors.$secondary-font;
+        }
+    }
+}
+
+@media only all and (min-device-width: 1920px) and (max-device-width: 2559px) {
+    .MuiCard-root {
+        &.form-card {
+            width: 425px;
+        }
+    }
+}
+
+@media all and (min-device-width: 1025px) and (max-device-width: 1919px) {
+    .MuiFormHelperText-root {
+        &.MuiFormHelperText-root {
+            margin-left: 5px;
+        }
+    }
+}
+
+@media only all and (max-width: 640px) {
+    .MuiCard-root {
+        &.form-card {
+            width: 300px;
+        }
+    }
+
+    .MuiChip-label {
+        &.MuiChip-label {
+            margin: 7px 0;
+            text-overflow: unset;
+            overflow: auto;
+            white-space: pre-wrap;    
+        }
+    }
+
+    #sign-attendance-form {
+        h5 {
+            margin: 0 5px;
+        }
+    }
+
+    .font-bg1 {
+        margin-top: -5px;
+    }
+}

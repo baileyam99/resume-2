@@ -1,0 +1,56 @@
+@use '../../styles/colors.scss';
+@use '../../styles/animations.scss';
+
+#create-account-section {
+    transition: all 0.3s ease-in-out;
+    animation: animations.$fade-in;
+}
+
+.create-account-wrapper-div {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(132, 116, 116, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3 ease;
+    margin: 1em;
+    margin-left: 10px;
+    width: auto;
+    height: calc(100vh - 2.5em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.create-account-content {
+    width: 500px;
+    height: 100%;
+    padding: 5em 0;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media all and (min-device-width: 1025px) and (max-device-width: 1919px) {
+    .create-account-content {
+        width: 300px;
+    }
+}
+
+@media only all and (max-width: 640px) {
+    .create-account-wrapper-div {
+        margin-left: 1em;
+        height: calc(100vh - 7em);
+    }
+
+    .create-account-content {
+        width: 100%;
+        padding: 0;
+    }
+}
